@@ -43,7 +43,7 @@ define( [
             return this._imageObject instanceof HTMLCanvasElement;
         },
         isImage: function () {
-            return this._imageObject instanceof window.Image;
+            return this._imageObject instanceof Image;
         },
         isTypedArray: function () {
             return this._imageObject instanceof Uint8Array;

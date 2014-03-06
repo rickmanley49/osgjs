@@ -44,7 +44,7 @@ define( [
     // keep one instance of image fallback
     if ( !Input.imageFallback ) {
         Input.imageFallback = ( function () {
-            var fallback = new window.Image();
+            var fallback = new Image();
             fallback.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVQIW2P8DwQACgAD/il4QJ8AAAAASUVORK5CYII=';
             return fallback;
         } )();
@@ -112,7 +112,7 @@ define( [
             var checkInlineImage = 'data:image/';
             // crossOrigin does not work for inline data image
             var isInlineImage = ( url.substring( 0, checkInlineImage.length ) === checkInlineImage );
-            var img = new window.Image();
+            var img = new Image();
             img.onerror = function () {
                 Notify.warn( 'warning use white texture as fallback instead of ' + url );
                 image.setImage( Input.imageFallback );
@@ -307,7 +307,7 @@ define( [
                     vb = jsonObj.Array.Uint16Array;
                     type = 'Uint16Array';
                 } else {
-                    Notify.warn( 'Typed Array ' + window.Object.keys( jsonObj.Array )[ 0 ] );
+                    Notify.warn( 'Typed Array ' + Object.keys( jsonObj.Array )[ 0 ] );
                     type = 'Float32Array';
                 }
 
@@ -486,7 +486,7 @@ define( [
         readObject: function () {
 
             var jsonObj = this.getJSON();
-            var prop = window.Object.keys( jsonObj )[ 0 ];
+            var prop = Object.keys( jsonObj )[ 0 ];
             if ( !prop ) {
                 Notify.warn( 'can\'t find property for object ' + jsonObj );
                 return undefined;

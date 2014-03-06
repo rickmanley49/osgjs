@@ -1,3 +1,3 @@
 define( function ( ) {
-    return window.Hammer;
+    return typeof(window) === 'undefined'? global.Hammer : window.Hammer;
 } );

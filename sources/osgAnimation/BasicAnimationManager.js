@@ -111,7 +111,7 @@ define( [
                 while ( pri >= 0 ) {
                     if ( this._actives[ pri ][ name ] ) {
                         delete this._actives[ pri ][ name ];
-                        this._actives[ pri ]._keys = window.Object.keys( this._actives[ pri ] ).filter( filterFunction );
+                        this._actives[ pri ]._keys = Object.keys( this._actives[ pri ] ).filter( filterFunction );
                         return;
                     }
                     pri--;
@@ -189,7 +189,7 @@ define( [
         },
         buildTargetList: function () {
             this._targets.length = 0;
-            var keys = window.Object.keys( this._animations );
+            var keys = Object.keys( this._animations );
             for ( var i = 0, l = keys.length; i < l; i++ ) {
                 var a = this._animations[ keys[ i ] ];
                 var channels = a.getChannels();

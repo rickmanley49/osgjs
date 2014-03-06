@@ -37,7 +37,7 @@ define( [
             return vars;
         };
 
-        var options = optionsURL();
+        var options =  typeof (window) === 'undefined' ? [] : optionsURL();
 
         if ( options.log !== undefined ) {
             var level = options.log.toLowerCase();

@@ -1,3 +1,3 @@
 define( function ( ) {
-    return window.vr;
+    return typeof(window) === 'undefined'? global.vr : window.vr;
 } );

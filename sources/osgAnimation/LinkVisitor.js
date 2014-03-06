@@ -21,7 +21,7 @@ define( [
     LinkVisitor.prototype = MACROUTILS.objectInehrit( NodeVisitor.prototype, {
         setAnimationMap: function ( anims ) {
             this._animations = anims;
-            this._animationKeys = window.Object.keys( anims );
+            this._animationKeys = Object.keys( anims );
         },
 
         apply: function ( node ) {

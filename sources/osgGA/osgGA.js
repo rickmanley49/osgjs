@@ -15,6 +15,9 @@ define( [
 
     var osgGA = {};
 
+    if ( typeof(window) === 'undefined' )
+        return osgGA;
+
     Hammer.NO_MOUSEEVENTS = true; // disable hammer js mouse events
 
     osgGA.FirstPersonManipulator = FirstPersonManipulator;

@@ -1,3 +1,3 @@
 define( function ( ) {
-    return window.Leap;
+    return typeof(window) === 'undefined'? global.Leap : window.Leap;
 } );

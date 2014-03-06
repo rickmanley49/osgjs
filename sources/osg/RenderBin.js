@@ -90,7 +90,7 @@ define( [
             }
 
             var bins = this._bins;
-            var keys = window.Object.keys( bins );
+            var keys = Object.keys( bins );
             for ( var i = 0, l = keys.length; i < l; i++ ) {
                 bins[ keys[ i ] ].sort();
             }
@@ -148,7 +148,7 @@ define( [
 
         drawImplementation: function ( state, previousRenderLeaf ) {
             var previous = previousRenderLeaf;
-            var binsKeys = window.Object.keys( this._bins );
+            var binsKeys = Object.keys( this._bins );
             var bins = this._bins;
             var binsArray = [];
             for ( var i = 0, l = binsKeys.length; i < l; i++ ) {

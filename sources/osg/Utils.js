@@ -164,7 +164,7 @@ define( [
     Utils.performance = {};
     Utils.performance.now = ( function () {
         // if no window.performance
-        if ( window.performance === undefined ) {
+        if ( typeof(window) === 'undefined' || window.performance === undefined ) {
             return function () {
                 return Date.now();
             };

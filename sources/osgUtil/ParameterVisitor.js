@@ -25,15 +25,15 @@ define( [
         },
 
         getValue: function ( name ) {
-            if ( window.localStorage ) {
-                var value = window.localStorage.getItem( name );
+            if ( localStorage ) {
+                var value = localStorage.getItem( name );
                 return value;
             }
             return null;
         },
         setValue: function ( name, value ) {
-            if ( window.localStorage ) {
-                window.localStorage.setItem( name, value );
+            if ( localStorage ) {
+                localStorage.setItem( name, value );
             }
         },
         createHTMLSlider: function ( param, value, nameIndex, cbnameIndex ) {
@@ -295,7 +295,7 @@ define( [
             if ( !maps ) {
                 return;
             }
-            var keys = window.Object.keys( uniformMap );
+            var keys = Object.keys( uniformMap );
             for ( var i = 0, l = keys.length; i < l; i++ ) {
                 var k = keys[ i ];
                 // get the first one found in the tree
@@ -335,7 +335,7 @@ define( [
             this.getUniformList( program.getFragmentShader().getText(), uniformMap );
 
 
-            var keys = window.Object.keys( uniformMap );
+            var keys = Object.keys( uniformMap );
 
             if ( programName === undefined ) {
                 var hashCode = function ( str ) {

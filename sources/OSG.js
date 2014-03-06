@@ -24,11 +24,12 @@ define( [
     var namespaces = [ 'osg', 'osgAnimation', 'osgDB', 'osgGA', 'osgUtil', 'osgViewer' ];
 
     // for backward compatibility
-    openSceneGraph.globalify = function () {
-        namespaces.forEach( function ( namespace ) {
-            window[ namespace ] = openSceneGraph[ namespace ];
-        } );
-    };
-
+    if (typeof (window) !== 'undefined'){
+         openSceneGraph.globalify = function () {
+             namespaces.forEach( function ( namespace ) {
+                 window[ namespace ] = openSceneGraph[ namespace ];
+             } );
+         };
+    }
     return openSceneGraph;
 } );
