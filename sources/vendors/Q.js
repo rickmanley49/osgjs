@@ -1,6 +1,6 @@
 define( function ( ) {
     if (typeof(window) === 'undefined')
-        window = global;
+        return require( 'Q' );
 
     if ( window.Q ) {
         return Q;
