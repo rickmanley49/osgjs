@@ -141,6 +141,17 @@ var gruntTasks = { };
             startFile : Path.join( UTILS_PATH, 'wrap.start' ),
             endFile : Path.join( UTILS_PATH, 'wrap.end' ) } } };
 
+    gruntTasks.requirejs.distPureSources = { options : {
+        out : Path.join( DIST_PATH, 'OSG-module.js' ),
+        include: ['OSG'],
+        paths: {
+            'Q': 'vendors/Q',
+            'Hammer': 'vendors/Hammer',
+            'Leap': 'vendors/Leap',
+            'vr': 'vendors/vr'
+        }
+    }};
+
 } )( );
 
 // ## Clean
@@ -170,7 +181,7 @@ var gruntTasks = { };
     } };
 
     gruntTasks.docco = {
-        singleDoc: {            
+        singleDoc: {
             src: Path.join( BUILD_PATH, 'docs/OSG.js' ),
             //src:  find( SOURCE_PATH, '**/*.js' ).map( function ( path ) { return Path.join( SOURCE_PATH, path ); } ),
             options: {
@@ -188,7 +199,7 @@ var gruntTasks = { };
 
 } )( );
 
-// ## Plato 
+// ## Plato
 ( function () {
     gruntTasks.plato = {
         options: {
