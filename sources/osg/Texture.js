@@ -200,10 +200,10 @@ define( [
 
             var image = img;
             if ( img instanceof Image ||
-                 img instanceof HTMLCanvasElement ||
-                 img instanceof Uint8Array ) {
-                     image = new Image( img );
-                 }
+                 (typeof(HTMLCanvasElement) !== "undefined" && img instanceof HTMLCanvasElement) ||
+                 (typeof(Uint8Array) !== "undefined" && img instanceof Uint8Array)) {
+                image = new Image( img );
+            }
 
             this._image = image;
             this.setImageFormat( imageFormat );
