@@ -40,13 +40,13 @@ define( [
             this.dirty();
         },
         isCanvas: function () {
-            return this._imageObject instanceof HTMLCanvasElement;
+            return typeof(window) !== undefined && this._imageObject instanceof HTMLCanvasElement;
         },
         isImage: function () {
-            return this._imageObject instanceof Image;
+            return typeof(window) !== undefined &&  this._imageObject instanceof window.Image;
         },
         isTypedArray: function () {
-            return this._imageObject instanceof Uint8Array;
+            return  typeof(window) !== undefined && this._imageObject instanceof Uint8Array;
         },
         setWidth: function ( w ) {
             this._width = w;

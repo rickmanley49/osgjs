@@ -4,7 +4,7 @@ define( [
     'osg/NodeVisitor',
     'osg/Object',
     'osgAnimation/AnimationUpdateCallback'
-], function ( Notify, MACROUTILS, NodeVisitor, Object, AnimationUpdateCallback ) {
+], function ( Notify, MACROUTILS, NodeVisitor, OsgObject, AnimationUpdateCallback ) {
 
 
     /**

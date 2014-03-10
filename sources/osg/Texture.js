@@ -199,9 +199,10 @@ define( [
         setImage: function ( img, imageFormat ) {
 
             var image = img;
-            if ( img instanceof Image ||
+            if ( typeof(window) !== "undefined" &&
+                 (img instanceof window.Image ||
                  (typeof(HTMLCanvasElement) !== "undefined" && img instanceof HTMLCanvasElement) ||
-                 (typeof(Uint8Array) !== "undefined" && img instanceof Uint8Array)) {
+                 (typeof(Uint8Array) !== "undefined" && img instanceof Uint8Array))) {
                 image = new Image( img );
             }
 

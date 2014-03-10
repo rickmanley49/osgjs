@@ -2,14 +2,14 @@ define( [
     'osg/Notify',
     'osg/Utils',
     'osg/Object'
-], function ( Notify, MACROUTILS, Object ) {
+], function ( Notify, MACROUTILS, OsgObject ) {
 
     /**
      *  BasicAnimationManager
      *  @class BasicAnimationManager
      */
     var BasicAnimationManager = function () {
-        Object.call( this );
+        OsgObject.call( this );
         this._animations = {};
 
         this._actives = {};
@@ -20,7 +20,7 @@ define( [
     };
 
     /** @lends BasicAnimationManager.prototype */
-    BasicAnimationManager.prototype = MACROUTILS.objectInehrit( Object.prototype, {
+    BasicAnimationManager.prototype = MACROUTILS.objectInehrit( OsgObject.prototype, {
         _updateAnimation: function ( animationParameter, t, priority ) {
             var duration = animationParameter.duration;
             var weight = animationParameter.weight;
